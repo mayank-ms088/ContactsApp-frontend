@@ -4,7 +4,7 @@ import { mockImgAvatar } from "../utils/mockImages";
 
 // ----------------------------------------------------------------------
 
-const users = [...Array(24)].map((_, index) => ({
+const contacts = [...Array(24)].map((_, index) => ({
   id: faker.datatype.uuid(),
   avatarUrl: mockImgAvatar(index + 1),
   name: faker.name.findName(),
@@ -26,18 +26,18 @@ const users = [...Array(24)].map((_, index) => ({
   //   'Full Stack Developer'
   // ])
 }));
-users.push({
+contacts.push({
   id: faker.datatype.uuid(),
-  avatarUrl: mockImgAvatar(users.length + 1),
+  avatarUrl: mockImgAvatar(contacts.length + 1),
   name: "Mayank Sharma",
   company: "Contacs APP Inc",
   mobile: "9027350941",
 });
-users.push({
+contacts.push({
   id: faker.datatype.uuid(),
-  avatarUrl: mockImgAvatar(users.length + 1),
+  avatarUrl: mockImgAvatar(contacts.length + 1),
   name: "Sharma Mayank",
   company: "APPLE Inc",
   mobile: "8881766752",
 });
-export default users;
+export default contacts;

@@ -25,7 +25,7 @@ import {
   ContactListToolbar,
 } from "../sections/@dashboard/contact";
 //
-import USERLIST from "../_mocks_/user";
+import CONTACTLIST from "../_mocks_/contacts";
 
 // ----------------------------------------------------------------------
 
@@ -89,7 +89,7 @@ export default function ContactList() {
 
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
-      const newSelecteds = USERLIST.map((n) => n.name);
+      const newSelecteds = CONTACTLIST.map((n) => n.name);
       setSelected(newSelecteds);
       return;
     }
@@ -128,10 +128,10 @@ export default function ContactList() {
   };
 
   const emptyRows =
-    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - USERLIST.length) : 0;
+    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - CONTACTLIST.length) : 0;
 
   const filteredContacts = applySortFilter(
-    USERLIST,
+    CONTACTLIST,
     getComparator(order, orderBy),
     filterName
   );
@@ -139,7 +139,7 @@ export default function ContactList() {
   const isContactNotFound = filteredContacts.length === 0;
 
   return (
-    <Page title="Contact | Minimal-UI">
+    <Page title="Contact">
       <Container>
         <Stack
           direction="row"
@@ -174,7 +174,7 @@ export default function ContactList() {
                   order={order}
                   orderBy={orderBy}
                   headLabel={TABLE_HEAD}
-                  rowCount={USERLIST.length}
+                  rowCount={CONTACTLIST.length}
                   numSelected={selected.length}
                   onRequestSort={handleRequestSort}
                   onSelectAllClick={handleSelectAllClick}
@@ -241,7 +241,7 @@ export default function ContactList() {
           <TablePagination
             rowsPerPageOptions={[5, 10, 25]}
             component="div"
-            count={USERLIST.length}
+            count={CONTACTLIST.length}
             rowsPerPage={rowsPerPage}
             page={page}
             onPageChange={handleChangePage}

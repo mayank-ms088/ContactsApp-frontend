@@ -1,15 +1,9 @@
-import {
-  Link as RouterLink,
-  useParams,
-  Navigate,
-  useNavigate,
-} from "react-router-dom";
+import { useParams, Navigate, useNavigate } from "react-router-dom";
 // material
 import { styled } from "@mui/material/styles";
 import {
   Box,
   Card,
-  Link,
   Container,
   Typography,
   Stack,
@@ -18,7 +12,7 @@ import {
 // components
 import Page from "../components/Page";
 import ContactDetails from "src/sections/ContactDetails";
-import CONTACTLIST from "src/_mocks_/user";
+import CONTACTLIST from "src/_mocks_/contacts";
 import Iconify from "src/components/Iconify";
 // ----------------------------------------------------------------------
 
